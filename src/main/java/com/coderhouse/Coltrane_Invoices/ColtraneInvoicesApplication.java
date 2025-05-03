@@ -9,8 +9,6 @@ public class ColtraneInvoicesApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ColtraneInvoicesApplication.class, args);
 		
-		//Test Commit.-
-		
 	}
 
 }
