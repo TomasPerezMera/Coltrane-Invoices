@@ -1,9 +1,24 @@
 package com.coderhouse.Coltrane_Invoices.entities;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
+
+@Entity
+@Table(name = "clients")
 public class Client {
-
+	
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
@@ -18,6 +33,8 @@ public class Client {
 	
 	private LocalDateTime createdAt;
 	
+	@OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+	private List<Sale> sales = new ArrayList<>();	
 	
 	public Client() {
 		super();
@@ -35,5 +52,6 @@ public class Client {
 		this.address = address;
 		this.createdAt = createdAt;
 	}
+	
 	
 }
