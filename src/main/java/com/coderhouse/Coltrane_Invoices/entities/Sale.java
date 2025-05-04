@@ -23,7 +23,7 @@ public class Sale {
     private int id;
     
     @Column(name = "sale_date", nullable = false)
-    private LocalDateTime saleDate;
+    private LocalDateTime saleDate = LocalDateTime.now();
     
     @Column(name = "total_amount", nullable = false)
     private double totalAmount;
@@ -32,11 +32,18 @@ public class Sale {
     @JoinColumn(name = "client_id", nullable = false)
     private Client client;
     
-    public Sale() {
+	public Sale() {
+		super();
+	}
+    
+    public Sale(double totalAmount, Client client) {
+        this.saleDate = LocalDateTime.now();
+        this.totalAmount = totalAmount;
+        this.client = client;
     }
     
     public Sale(LocalDateTime saleDate, double totalAmount, Client client) {
-        this.saleDate = saleDate;
+        this.saleDate = saleDate != null ? saleDate : LocalDateTime.now();
         this.totalAmount = totalAmount;
         this.client = client;
     }
