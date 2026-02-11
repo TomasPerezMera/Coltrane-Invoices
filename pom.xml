@@ -8,12 +8,12 @@
 		<version>3.4.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.coderhouse</groupId>
+	<groupId>com.coltraneinvoices</groupId>
 	<artifactId>Coltrane-Invoices</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>Coltrane-Invoices</name>
 	<description>Proyecto Final para la clase "Programación con Java 3.0", Comisión #76340, alumno Tomás Pérez Mera.-</description>
-	<url/>
+	<url>https://github.com/TomasPerezMera/Coltrane-Invoices</url>
 	<licenses>
 		<license/>
 	</licenses>

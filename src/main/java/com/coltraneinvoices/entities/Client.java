@@ -1,4 +1,4 @@
-package com.coderhouse.Coltrane_Invoices.entities;
+package com.coltraneinvoices.entities;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

@@ -1,15 +1,15 @@
-package com.coderhouse.Coltrane_Invoices.services;
-
-import com.coderhouse.Coltrane_Invoices.entities.Client;
-import com.coderhouse.Coltrane_Invoices.entities.Sale;
-import com.coderhouse.Coltrane_Invoices.repositories.ClientRepository;
-import com.coderhouse.Coltrane_Invoices.repositories.SaleRepository;
+package com.coltraneinvoices.services;
 
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.coltraneinvoices.entities.Client;
+import com.coltraneinvoices.entities.Sale;
+import com.coltraneinvoices.repositories.ClientRepository;
+import com.coltraneinvoices.repositories.SaleRepository;
 
 
 @Service

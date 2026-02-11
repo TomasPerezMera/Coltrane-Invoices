@@ -1,7 +1,8 @@
-package com.coderhouse.Coltrane_Invoices.repositories;
+package com.coltraneinvoices.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.coderhouse.Coltrane_Invoices.entities.Sale;
+
+import com.coltraneinvoices.entities.Sale;
 
 public interface SaleRepository extends JpaRepository<Sale, Integer> {
 }
