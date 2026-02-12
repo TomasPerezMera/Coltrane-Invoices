@@ -46,6 +46,4 @@ public class InvoiceDetail {
     private BigDecimal subtotal;
 	
 	
-	
-	
 }

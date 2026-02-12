@@ -7,8 +7,5 @@ public interface InvoiceDetailRepository extends JpaRepository<InvoiceDetail, Lo
 	InvoiceDetail findByInvoiceId(Long invoiceId);
 	
 	InvoiceDetail findByProductId(Long productId);
-	
-	
-	
-	
+		
 }
