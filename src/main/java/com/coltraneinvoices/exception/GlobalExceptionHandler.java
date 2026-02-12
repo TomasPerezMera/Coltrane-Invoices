@@ -1,8 +1,11 @@
 package com.coltraneinvoices.exception;
 
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+
+import com.coltraneinvoices.dto.ErrorResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
