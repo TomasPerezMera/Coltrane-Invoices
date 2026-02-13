@@ -1,5 +1,7 @@
 package com.coltraneinvoices.config;
 
+import java.time.Clock;
+
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,4 +15,8 @@ public class AppConfig {
 		return builder.build();
 	}
 	
+    @Bean
+    public Clock clock(){
+        return Clock.systemUTC();
+    }
 }

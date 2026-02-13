@@ -1,12 +1,8 @@
 package com.coltraneinvoices.invoice;
 
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.util.List;
-
-import org.hibernate.annotations.CreationTimestamp;
-
 import com.coltraneinvoices.customer.Customer;
-
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,15 +32,18 @@ public class Invoice {
 	
     
     @Column(name = "invoice_date", nullable = false, updatable = false)
-    private LocalDateTime invoiceDate;
+    private OffsetDateTime invoiceDate;
     
     
     @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
+    
+    
+    private Long productTotal;
 
     
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)
-    private List<InvoiceDetail> detalles;
+    private List<InvoiceDetail> details;
     
 }

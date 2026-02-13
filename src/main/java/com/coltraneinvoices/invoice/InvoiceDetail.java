@@ -41,9 +41,8 @@ public class InvoiceDetail {
 	
     private Integer productQuantity;
     
-    private BigDecimal precioUnitario;
+    private BigDecimal unitPrice;
     
     private BigDecimal subtotal;
-	
 	
 }
