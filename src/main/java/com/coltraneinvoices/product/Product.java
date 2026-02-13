@@ -33,11 +33,14 @@ public class Product {
     private String name;
     
     
-    @Column(name = "product_description", nullable = false)
+    @Column(name = "product_description", nullable = false, columnDefinition = "TEXT")
     private String description;
     
+    @Column(name = "cover_img_source", nullable = false)
+    private String coverImageSource;
     
-    @Column(name = "current_price", nullable = false)
+    
+    @Column(name = "current_price", nullable = false, precision = 15, scale = 2)
     private BigDecimal currentPrice;
     
     
