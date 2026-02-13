@@ -1,9 +1,18 @@
 package com.coltraneinvoices.customer;
 
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
 import com.coltraneinvoices.dto.CustomerDTO;
 import com.coltraneinvoices.exception.DuplicateResourceException;
+import com.coltraneinvoices.exception.InvalidOperationException;
+import com.coltraneinvoices.exception.ResourceNotFoundException;
 import com.coltraneinvoices.service.TimeProvider;
 
+import jakarta.transaction.Transactional;
+
+@Service
 public class CustomerService {
 
 	private final CustomerRepository customerRepository;
@@ -14,6 +23,7 @@ public class CustomerService {
 	this.timeProvider = timeProvider;
 	}
 	
+	@Transactional
 	public Customer createCustomer(CustomerDTO dto) {
 		
 		if(customerRepository.existsByDni(dto.getDni())) {
@@ -25,11 +35,63 @@ public class CustomerService {
 				.lastName(dto.getLastName())
 				.dni(dto.getDni())
 				.email(dto.getEmail())
+				.address(dto.getAddress())
 				.createdAt(timeProvider.getCurrentUtcTime())
 				.build();
 
 	    return customerRepository.save(customer);
 	}
 
+	public Customer getCustomerById(Long customerId) {
+		return customerRepository.findById(customerId)
+		        .orElseThrow(() -> new ResourceNotFoundException("Cliente", customerId));
+	}
 	
+	public List<CustomerDTO> getAllCustomers() {
+	    return customerRepository.findAll().stream()
+	        .map(this::convertToDTO)
+	        .toList();
+	}
+	
+	@Transactional
+	public Customer updateCustomer(Long customerId, CustomerDTO dto) {
+		
+		Customer customer = customerRepository.findById(customerId)
+	        .orElseThrow(() -> new ResourceNotFoundException("Customer", customerId));
+		
+		if (dto.getFirstName() != null && !dto.getFirstName().isBlank()) {
+		    customer.setFirstName(dto.getFirstName());
+		}
+		if (dto.getLastName() != null && !dto.getLastName().isBlank()) {
+		    customer.setLastName(dto.getLastName());
+		}
+		if (dto.getAddress() != null && !dto.getAddress().isBlank()) {
+		    customer.setAddress(dto.getAddress());
+		}
+		if (dto.getDni() != null && dto.getDni() != 0) {
+		    customer.setDni(dto.getDni());
+		}
+		if (dto.getEmail() != null && !dto.getEmail().isBlank()) {
+		    customer.setEmail(dto.getEmail());
+		}
+		return customerRepository.save(customer);
+	}
+	
+	public void deleteCustomerById(Long customerId) {
+		if (!customerRepository.existsById(customerId)) {
+			throw new InvalidOperationException("Error - no existe un cliente con ese ID!");
+		}
+		customerRepository.deleteById(customerId);
+	}
+	
+	// Método para conversión Entidad -> DTO
+    private CustomerDTO convertToDTO(Customer customer) {
+    		return CustomerDTO.builder()
+    				.firstName(customer.getFirstName())
+    				.lastName(customer.getLastName())
+    				.dni(customer.getDni())
+    				.email(customer.getEmail())
+    				.address(customer.getAddress())
+    				.build();
+    }	
 }

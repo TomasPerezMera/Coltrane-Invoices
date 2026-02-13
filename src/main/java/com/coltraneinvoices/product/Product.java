@@ -13,12 +13,14 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "products")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
@@ -51,9 +53,9 @@ public class Product {
     @Column(name = "product_category")
     private String category;
     
-    
+    @Builder.Default
     @Column(name = "is_available")
-    private Boolean isAvailable;
+    private Boolean isAvailable = true;
     
     
     @OneToMany(mappedBy = "product")

@@ -16,6 +16,7 @@ public class ProductDTO {
 	private Long productId;
 	private String name;
 	private String description;
+    private String coverImageSource;
 	private BigDecimal currentPrice;
 	private Long stock;
 	private String category;

@@ -12,6 +12,8 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
 	
 	Product findByProduct_ProductName(String productName);
 	
+	boolean existsById(Long productId);
+	
 	List<Product> findByStockGreaterThan(Long amount);
 	
 	List<Product> findByAvailableTrue();
