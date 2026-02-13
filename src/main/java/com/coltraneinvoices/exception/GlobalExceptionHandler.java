@@ -10,6 +10,7 @@ import com.coltraneinvoices.dto.ErrorResponse;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 		
+		// Manejo de Excepciones global para evitar try...catch en Controladores;
 	    @ExceptionHandler(ResourceNotFoundException.class)
 	    public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException ex) {
 	        ErrorResponse error = new ErrorResponse("RESOURCE_NOT_FOUND", ex.getMessage());
