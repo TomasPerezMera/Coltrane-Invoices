@@ -1,9 +1,6 @@
 package com.coltraneinvoices.customer;
 
-import java.time.LocalDateTime;
-
-import org.hibernate.annotations.CreationTimestamp;
-
+import java.time.OffsetDateTime;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -18,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "customers")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Customer {
@@ -52,7 +51,7 @@ public class Customer {
 	    private String address;
 	    
 	    
-	    @CreationTimestamp
-	    @Column(name = "created_at", nullable = true, updatable = false)
-	    private LocalDateTime createdAt;
+	    @Column(name = "created_at", nullable = false, updatable = false)
+	    private OffsetDateTime createdAt;
+	    
 	}

@@ -1,5 +1,5 @@
 package com.coltraneinvoices.dto;
 
-public class InvoiceDTO {
+public class InvoiceDetailDTO {
 
 }

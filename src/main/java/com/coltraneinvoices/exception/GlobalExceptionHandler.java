@@ -11,16 +11,42 @@ import com.coltraneinvoices.dto.ErrorResponse;
 public class GlobalExceptionHandler {
 		
 	    @ExceptionHandler(ResourceNotFoundException.class)
-	    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
+	    public ResponseEntity<ErrorResponse> handleResourceNotFound(ResourceNotFoundException ex) {
 	        ErrorResponse error = new ErrorResponse("RESOURCE_NOT_FOUND", ex.getMessage());
 	        return ResponseEntity
 	                .status(HttpStatus.NOT_FOUND)
 	                .body(error);
 	    }
 	    
-	    // TODO Individual Exceptions List:
-		//	    DuplicateResourceException
-		//	    InvalidOperationException
-		//	    PaymentFailedException
-		//	    InsufficientStockException
+	    @ExceptionHandler(DuplicateResourceException.class)
+	    public ResponseEntity<ErrorResponse> handleDuplicateResource(DuplicateResourceException ex) {
+	    		ErrorResponse error = new ErrorResponse("DUPLICATE_RESOURCE", ex.getMessage());
+	    		return ResponseEntity
+	    				.status(HttpStatus.CONFLICT)
+	    				.body(error);
+	    }
+	    
+	    @ExceptionHandler(InvalidOperationException.class)
+	    public ResponseEntity<ErrorResponse> handleInvalidOperation(InvalidOperationException ex) {
+	        ErrorResponse error = new ErrorResponse("INVALID_OPERATION", ex.getMessage());
+	        return ResponseEntity
+	                .status(HttpStatus.BAD_REQUEST)
+	                .body(error);
+	    }
+	    
+	    @ExceptionHandler(PaymentFailedException.class)
+	    public ResponseEntity<ErrorResponse> handlePaymentFailed(PaymentFailedException ex) {
+	    		ErrorResponse error = new ErrorResponse("PAYMENT_FAILED", ex.getMessage());
+	    		return ResponseEntity
+	    				.status(HttpStatus.BAD_REQUEST)
+	    				.body(error);
+	    }
+	    
+	    @ExceptionHandler(InsufficientStockException.class)
+	    public ResponseEntity<ErrorResponse> handleInsufficientStock(InsufficientStockException ex) {
+	    		ErrorResponse error = new ErrorResponse("INSUFFICIENT_STOCK", ex.getMessage());
+    			return ResponseEntity
+    					.status(HttpStatus.CONFLICT)
+    					.body(error);
+	    }
 	}

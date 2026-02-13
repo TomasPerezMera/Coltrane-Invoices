@@ -39,7 +39,7 @@ public class Invoice {
     @JoinColumn(name = "customer_id")
     private Customer customer;
     
-    
+    @Column(name = "product_total", nullable = false)
     private Long productTotal;
 
     

@@ -31,12 +31,12 @@ public class InvoiceDetail {
 	
 	@ManyToOne
 	@JoinColumn(name = "product_id")
-	private Product product;
+	private Product productId;
 	
 	
 	@ManyToOne
 	@JoinColumn(name = "invoice_id")
-	private Invoice invoice;
+	private Invoice invoiceId;
 	
 	
     private Integer productQuantity;
