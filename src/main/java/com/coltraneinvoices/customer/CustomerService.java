@@ -1,6 +1,7 @@
 package com.coltraneinvoices.customer;
 
 import com.coltraneinvoices.dto.CustomerDTO;
+import com.coltraneinvoices.exception.DuplicateResourceException;
 import com.coltraneinvoices.service.TimeProvider;
 
 public class CustomerService {
@@ -14,6 +15,10 @@ public class CustomerService {
 	}
 	
 	public Customer createCustomer(CustomerDTO dto) {
+		
+		if(customerRepository.existsByDni(dto.getDni())) {
+		    throw new DuplicateResourceException("Ya existe un cliente con este DNI!");
+		}
 		
 		Customer customer = Customer.builder()
 				.firstName(dto.getFirstName())
