@@ -4,11 +4,15 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-	Customer findByCustomer_FirstName(String firstName);
+	Customer findByCustomerId(Long id);
+
+	Customer findByFirstName(String firstName);
 	
-	Customer findByCustomer_LastName(String lastName);
+	Customer findByLastName(String lastName);
 	
-	Customer findByCustomer_Email(String email);
+	Customer findByEmail(String email);
+	
+	Customer findByDni(Long dni);
 	
 	boolean existsByDni(Long dni);
 	

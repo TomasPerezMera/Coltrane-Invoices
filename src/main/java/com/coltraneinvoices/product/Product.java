@@ -59,6 +59,6 @@ public class Product {
     
     
     @OneToMany(mappedBy = "product")
-    private List<InvoiceDetail> detalles;
+    private List<InvoiceDetail> details;
     
 }

@@ -6,16 +6,16 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-	Product findByProduct_ProductId(Long productId);
+	Product findByProductId(Long productId);
 	
-	Product findByProduct_ProductCategory(String productCategory);
+	List<Product> findByCategory(String category);
 	
-	Product findByProduct_ProductName(String productName);
+	Product findByName(String name);
 	
 	boolean existsById(Long productId);
 	
 	List<Product> findByStockGreaterThan(Long amount);
 	
-	List<Product> findByAvailableTrue();
+	List<Product> findByIsAvailableTrue();
 	
 }
