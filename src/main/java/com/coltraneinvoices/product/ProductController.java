@@ -33,7 +33,7 @@ public class ProductController {
     		return productService.getAllProducts();
     }
     
-    @PostMapping("/create")
+    @PostMapping
     public ResponseEntity<Product> createProduct(@RequestBody ProductDTO dto) {
     		Product createdProduct = productService.createProduct(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(createdProduct);

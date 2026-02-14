@@ -14,6 +14,7 @@ import com.coltraneinvoices.dto.InvoiceRequestDTO;
 import com.coltraneinvoices.dto.InvoiceRequestDTO.InvoiceLinesRequestDTO;
 import com.coltraneinvoices.dto.InvoiceResponseDTO;
 import com.coltraneinvoices.exception.InsufficientStockException;
+import com.coltraneinvoices.exception.InvalidOperationException;
 import com.coltraneinvoices.exception.ResourceNotFoundException;
 import com.coltraneinvoices.product.Product;
 import com.coltraneinvoices.product.ProductRepository;
@@ -142,5 +143,55 @@ public class InvoiceService {
 	            .totalAmount(invoice.getTotalAmount())
 	            .build();
 	    }
-
+	
+	public Invoice getInvoiceById(Long invoiceId) {
+		return invoiceRepository.findById(invoiceId)
+			.orElseThrow(() -> new ResourceNotFoundException("Factura", invoiceId));
+	}
+	
+	public List<InvoiceResponseDTO> getAllInvoices() {
+		List<Invoice> invoices = invoiceRepository.findAll();
+		
+		if(invoices.isEmpty()) {
+			throw new InvalidOperationException("No hay ninguna factura creada!");
+		}
+		
+		// Iteramos sobre los invoice obtenidos para obtener los datos del DTO;
+		List<InvoiceResponseDTO> responseDTOs = new ArrayList<>();
+		for(Invoice invoice : invoices) {
+			
+			Customer customer = invoice.getCustomer();
+			List<InvoiceDetail> details = invoice.getDetails();
+	        InvoiceResponseDTO dto = buildResponseDTO(invoice, details, customer);
+	        responseDTOs.add(dto);
+	        
+		}
+		return responseDTOs;
+	}
+	
+	public List<InvoiceResponseDTO> getAllInvoicesFromCustomer(Long customerId) {
+		
+	    Customer customer = customerRepository.findById(customerId)
+	    		.orElseThrow(() -> new ResourceNotFoundException("Cliente", customerId));
+	    
+	    List<Invoice> invoiceList = invoiceRepository.findByCustomer_CustomerId(customerId);
+	    
+		List<InvoiceResponseDTO> responseDTOs = new ArrayList<>();
+			for(Invoice invoice : invoiceList) {
+			
+				List<InvoiceDetail> details = invoice.getDetails();
+		        InvoiceResponseDTO dto = buildResponseDTO(invoice, details, customer);
+		        responseDTOs.add(dto);
+		        
+			}
+			return responseDTOs;
+    }
+	
+	public void deleteInvoiceByID(Long invoiceId) {
+		if(!invoiceRepository.existsById(invoiceId)) {
+			throw new InvalidOperationException("Error - la factura indicada no existe!");
+		}
+		invoiceRepository.deleteById(invoiceId);
+	}
+	
 }
