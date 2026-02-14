@@ -1,5 +1,6 @@
 package com.coltraneinvoices.invoice;
 
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.List;
 import com.coltraneinvoices.customer.Customer;
@@ -41,8 +42,13 @@ public class Invoice {
     @JoinColumn(name = "customer_id")
     private Customer customer;
     
+    
     @Column(name = "product_total", nullable = false)
     private Long productTotal;
+    
+    
+    @Column(name = "total_amount", nullable = false)
+    private BigDecimal totalAmount;
 
     
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL)

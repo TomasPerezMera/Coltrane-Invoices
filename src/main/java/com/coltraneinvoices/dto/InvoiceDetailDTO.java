@@ -17,7 +17,7 @@ public class InvoiceDetailDTO {
     private Long productId;
     private Long invoiceId;
 
-    private Integer quantity;
+    private Long quantity;
     private BigDecimal unitPrice;
     private BigDecimal subtotal;
 }

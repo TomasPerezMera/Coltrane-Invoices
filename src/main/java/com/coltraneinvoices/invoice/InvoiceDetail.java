@@ -39,7 +39,7 @@ public class InvoiceDetail {
 	private Invoice invoice;
 	
 	
-    private Integer productQuantity;
+    private Long productQuantity;
     
     private BigDecimal unitPrice;
     

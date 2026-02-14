@@ -27,15 +27,16 @@ public class InvoiceRequestDTO {
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class InvoiceLinesRequestDTO {
-    		private Long numberOfLines;
-    		private ProductRefDTO productId;
+    public static class ProductRefDTO {
+        private Long productId;
     }
     
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
-    public static class ProductRefDTO {
-        private Long productoId;
+    public static class InvoiceLinesRequestDTO {
+    		private Long amount;
+    		private ProductRefDTO product;
     }
+    
 }

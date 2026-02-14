@@ -34,7 +34,7 @@ public class TimeProvider {
 	                return response.getBody().toOffsetDateTime();
 	            }
 	        } catch (RestClientException ex) {
-	        		System.out.println("Time API no disponible — usando JVM Clock como sustituto!");	     
+	        		System.out.println("Time.now API no disponible — usando JVM Clock como sustituto!");	     
 	        }
         return OffsetDateTime.now(clock);
 	}

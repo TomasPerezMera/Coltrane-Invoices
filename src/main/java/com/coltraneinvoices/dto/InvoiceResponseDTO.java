@@ -20,6 +20,7 @@ public class InvoiceResponseDTO {
     private CustomerDTO customer;
     private List<DetailResponseDTO> details;
     private Long productTotal;
+    private BigDecimal totalAmount;
     private List<String> errors;
     
     @Data
@@ -27,10 +28,12 @@ public class InvoiceResponseDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     public static class DetailResponseDTO {
+    		private Long productId;
+    		private String productName;
     		private Long invoiceId;
     		private Long detailId;
         private BigDecimal subtotal;
-        private Integer productQuantity;        
+        private Long productQuantity;        
         private BigDecimal unitPrice;
     }    
 }
