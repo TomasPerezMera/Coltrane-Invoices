@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 @Schema(description = "DTO para información del cliente")
 public class CustomerDTO {
 
+	// Read-Only para prevenir que Swagger indique al usuario ingresar ID.
+	@Schema(accessMode = Schema.AccessMode.READ_ONLY)
 	private Long customerId;
 	
     @NotNull(message = "El DNI es requerido!")

@@ -73,10 +73,10 @@ public class InvoiceService {
             		.build();
             		
             details.add(detail);
-            totalAmount.add(subtotal);
+            totalAmount = totalAmount.add(subtotal);
             
             // Obtenemos el total de ítems tras completar el loop:
-            totalProductQuantity =+ line.getProductQuantity();
+            totalProductQuantity += line.getProductQuantity();
             
             // Reducimos stock tras la venta:
             product.setStock(product.getStock() - line.getProductQuantity());
@@ -116,6 +116,7 @@ public class InvoiceService {
 	        .lastName(customer.getLastName())
 	        .email(customer.getEmail())
 	        .address(customer.getAddress())
+	        .phoneNumber(customer.getPhoneNumber())
 	        .build();
 	    
 	    // Convertimos InvoiceDetail a InvoiceDetailDTO;

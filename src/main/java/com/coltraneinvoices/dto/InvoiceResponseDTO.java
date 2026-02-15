@@ -17,8 +17,10 @@ import lombok.NoArgsConstructor;
 @Schema(description = "DTO para respuesta con datos completos de la factura creada")
 public class InvoiceResponseDTO {
 	
+	@Schema(accessMode = Schema.AccessMode.READ_ONLY)
     private Long invoiceId;
-    private OffsetDateTime invoiceDate;
+    
+	private OffsetDateTime invoiceDate;
     private CustomerDTO customer;
     private List<DetailResponseDTO> details;
     private Long productTotal;

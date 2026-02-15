@@ -15,7 +15,9 @@ import lombok.NoArgsConstructor;
 @Schema(description = "DTO con datos del producto")
 public class ProductDTO {
 	
+	@Schema(accessMode = Schema.AccessMode.READ_ONLY)
 	private Long productId;
+	
 	private String name;
 	private String description;
     private String coverImageSource;
