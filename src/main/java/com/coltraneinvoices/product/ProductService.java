@@ -6,7 +6,6 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.coltraneinvoices.dto.ProductDTO;
-import com.coltraneinvoices.exception.DuplicateResourceException;
 import com.coltraneinvoices.exception.InvalidOperationException;
 import com.coltraneinvoices.exception.ResourceNotFoundException;
 
@@ -23,10 +22,6 @@ public class ProductService {
 	}
 	
 	public Product createProduct(ProductDTO dto) {
-		
-		if(productRepository.existsById(dto.getProductId())) {
-		    throw new DuplicateResourceException("Ya existe un producto con este ID!");
-		}
 		
 		Product product = Product.builder()
 				.name(dto.getName())

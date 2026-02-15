@@ -4,10 +4,12 @@ import java.math.BigDecimal;
 import java.util.List;
 
 import com.coltraneinvoices.invoice.InvoiceDetail;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -70,7 +72,8 @@ public class Product {
     private Boolean isAvailable = true;
     
     
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<InvoiceDetail> details;
     
 }

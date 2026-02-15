@@ -14,7 +14,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @Entity
 @Table(name = "customers")
 @Schema(name = "Cliente", description = "Modelo de Cliente")
