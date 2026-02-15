@@ -51,8 +51,9 @@ public class Customer {
 	    
 
 	    @Schema(name = "Teléfono del cliente", example = "01145542023", requiredMode = Schema.RequiredMode.REQUIRED)
-	    @Column(name = "phone_number", length = 20)
-	    private Long phoneNumber;
+	    @Column(name = "phone_number", length = 20, nullable = false)
+	    @Builder.Default
+	    private Long phoneNumber = 0L;
 	    
 	    
 	    @Schema(name = "Dirección del cliente", example = "Calle Ficticia, 45", requiredMode = Schema.RequiredMode.REQUIRED)
@@ -60,7 +61,7 @@ public class Customer {
 	    private String address;
 	    
 	    
-	    @Schema(name = "Fecha de creación del cliente")
+	    @Schema(name = "Fecha de creación del cliente", example = "2026-02-15 20:49:24.687995")
 	    @Column(name = "created_at", nullable = false, updatable = false)
 	    private OffsetDateTime createdAt;
 	    

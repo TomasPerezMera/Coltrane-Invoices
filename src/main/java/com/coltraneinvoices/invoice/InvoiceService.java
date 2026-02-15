@@ -49,7 +49,7 @@ public class InvoiceService {
 	    // Inicializamos en 0 las variables previo al loop de cálculo del Invoice.
 	    List<InvoiceDetail> details = new ArrayList<>();
 	    BigDecimal totalAmount = BigDecimal.ZERO;
-	    Long totalQuantity = 0L;
+	    Long totalProductQuantity = 0L;
 
 	    	// Buscamos productos de la venta.
 	    for(InvoiceLinesRequestDTO line : requestDTO.getLines()) {
@@ -58,16 +58,16 @@ public class InvoiceService {
 	    		Product product = productRepository.findById(productId)
 	    		.orElseThrow(() -> new ResourceNotFoundException("Producto", productId));
 	    		
-	    	    if (product.getStock() < line.getAmount()) {
+	    	    if (product.getStock() < line.getProductQuantity()) {
 	                throw new InsufficientStockException(product.getName());
             }
 	    	    
 	    	    // Calculamos el subtotal de productos.
-            BigDecimal subtotal = product.getCurrentPrice().multiply(BigDecimal.valueOf(line.getAmount()));
+            BigDecimal subtotal = product.getCurrentPrice().multiply(BigDecimal.valueOf(line.getProductQuantity()));
             
             InvoiceDetail detail = InvoiceDetail.builder()
             		.product(product)
-            		.productQuantity(line.getAmount())
+            		.productQuantity(line.getProductQuantity())
             		.unitPrice(product.getCurrentPrice())
             		.subtotal(subtotal)
             		.build();
@@ -76,10 +76,10 @@ public class InvoiceService {
             totalAmount.add(subtotal);
             
             // Obtenemos el total de ítems tras completar el loop:
-            totalQuantity =+ line.getAmount();
+            totalProductQuantity =+ line.getProductQuantity();
             
             // Reducimos stock tras la venta:
-            product.setStock(product.getStock() - line.getAmount());
+            product.setStock(product.getStock() - line.getProductQuantity());
             productRepository.save(product);
             
 	    }
@@ -90,7 +90,7 @@ public class InvoiceService {
 	    Invoice invoice = Invoice.builder()
 	    		.customer(customer)
 	    		.invoiceDate(invoiceDate)
-	    		.productTotal(totalQuantity)
+	    		.productTotal(totalProductQuantity)
 	    		.totalAmount(totalAmount)
 	    		.build();
 

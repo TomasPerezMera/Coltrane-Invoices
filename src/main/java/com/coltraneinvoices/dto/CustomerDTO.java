@@ -33,4 +33,7 @@ public class CustomerDTO {
     @NotNull(message = "La dirección es requerida!")
     private String address;
     
+    // Número de teléfono es opcional.
+    private Long phoneNumber;
+    
 }

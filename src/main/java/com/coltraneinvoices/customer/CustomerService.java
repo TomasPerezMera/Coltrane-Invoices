@@ -36,6 +36,7 @@ public class CustomerService {
 				.dni(dto.getDni())
 				.email(dto.getEmail())
 				.address(dto.getAddress())
+				.phoneNumber(dto.getPhoneNumber())
 				.createdAt(timeProvider.getCurrentUtcTime())
 				.build();
 
@@ -73,6 +74,9 @@ public class CustomerService {
 		}
 		if (dto.getEmail() != null && !dto.getEmail().isBlank()) {
 		    customer.setEmail(dto.getEmail());
+		}
+		if (dto.getPhoneNumber() != null && dto.getPhoneNumber() != 0L) {
+		    customer.setPhoneNumber(dto.getPhoneNumber());
 		}
 		return customerRepository.save(customer);
 	}

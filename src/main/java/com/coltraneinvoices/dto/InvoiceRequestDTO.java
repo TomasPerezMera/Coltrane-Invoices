@@ -49,7 +49,7 @@ public class InvoiceRequestDTO {
     	
 	    	@NotNull(message = "La cantidad es obligatoria")
 	    	@Positive(message = "La cantidad debe ser positiva")
-    		private Long amount;
+    		private Long productQuantity;
 	    	
         @NotEmpty(message = "Debe incluir al menos un producto!")
     		private ProductRefDTO product;
