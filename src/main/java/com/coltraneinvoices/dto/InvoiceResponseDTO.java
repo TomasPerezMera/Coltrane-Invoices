@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.List;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +14,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "DTO para respuesta con datos completos de la factura creada")
 public class InvoiceResponseDTO {
 	
     private Long invoiceId;
@@ -27,6 +29,7 @@ public class InvoiceResponseDTO {
     @Builder
     @NoArgsConstructor
     @AllArgsConstructor
+    @Schema(description = "DTO interno para el detalle de la factura creada")
     public static class DetailResponseDTO {
     		private Long productId;
     		private String productName;
@@ -35,5 +38,6 @@ public class InvoiceResponseDTO {
         private BigDecimal subtotal;
         private Long productQuantity;        
         private BigDecimal unitPrice;
-    }    
+    }
+    
 }

@@ -10,8 +10,12 @@ import org.springframework.web.client.RestTemplate;
 
 import com.coltraneinvoices.dto.TimeApiResponseDTO;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 @Service
+@Schema(name = "Time Provider Service", description = "Servicio dedicado a la obtención de fecha actual" + 
+"utilizando la API de Time.now, con respaldo en la función Clock de JVM.")
 public class TimeProvider {
 		
     		private final RestTemplate restTemplate;	  

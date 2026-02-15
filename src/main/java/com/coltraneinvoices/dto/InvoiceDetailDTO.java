@@ -2,6 +2,7 @@ package com.coltraneinvoices.dto;
 
 import java.math.BigDecimal;
 
+import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Schema(description = "DTO para el detalle interno de la factura")
 public class InvoiceDetailDTO {
 
     private Long invoiceDetailId;
