@@ -56,10 +56,12 @@ public class ProductService {
 		if (dto.getName() != null && !dto.getName().isBlank()) {
 		    product.setName(dto.getName());
 		}
-		if (dto.getCurrentPrice().compareTo(BigDecimal.ZERO) <= 0) {
-		    throw new InvalidOperationException("Error - el precio no puede ser negativo!");
+		if(dto.getCurrentPrice() != null) {
+			if (dto.getCurrentPrice().compareTo(BigDecimal.ZERO) <= 0) {
+			    throw new InvalidOperationException("Error - el precio no puede ser negativo!");
+			}
+			    product.setCurrentPrice(dto.getCurrentPrice());
 		}
-		    product.setCurrentPrice(dto.getCurrentPrice());
 		    
 		if (dto.getDescription() != null && !dto.getDescription().isBlank()) {
 		    product.setDescription(dto.getDescription());
@@ -67,10 +69,13 @@ public class ProductService {
 		if (dto.getCoverImageSource() != null && !dto.getCoverImageSource().isBlank()) {
 		    product.setCoverImageSource(dto.getCoverImageSource());
 		}
-		if (dto.getStock() < 0) {
-		    throw new InvalidOperationException("El stock no puede ser negativo!");
-		}
-			product.setStock(dto.getStock());
+		
+		if(dto.getStock() != null) {
+			if (dto.getStock() < 0) {
+			    throw new InvalidOperationException("El stock no puede ser negativo!");
+			}
+				product.setStock(dto.getStock());
+		}		
 
 		if (dto.getCategory() != null && !dto.getCategory().isBlank()) {
 		    product.setCategory(dto.getCategory());
@@ -80,7 +85,7 @@ public class ProductService {
 		    product.setIsAvailable(dto.getIsAvailable());
 		}
 		
-		return product;
+		return productRepository.save(product);
 	}
 	
 	public void deleteProductById(Long productId) {
