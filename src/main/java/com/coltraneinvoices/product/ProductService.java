@@ -1,6 +1,7 @@
 package com.coltraneinvoices.product;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -39,6 +40,20 @@ public class ProductService {
 	public Product getProductById(Long productId) {
 		return productRepository.findById(productId)
 		        .orElseThrow(() -> new ResourceNotFoundException("Producto", productId));
+	}
+	
+	public List<ProductDTO> searchByName(String name) {
+	    List<Product> products = productRepository.findByName(name);
+	    if (products.isEmpty()) {
+	        throw new ResourceNotFoundException("Productos", name);
+	    }
+	    
+	    List<ProductDTO> productDTOs = new ArrayList<>();
+	    for (Product product : products) {
+	        productDTOs.add(convertToDTO(product));
+	    }
+	    
+	    return productDTOs;
 	}
 	
 	public List<ProductDTO> getAllProducts() {

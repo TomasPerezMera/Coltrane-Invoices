@@ -1,18 +1,23 @@
 package com.coltraneinvoices.customer;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
-	Customer findByCustomerId(Long id);
+	Optional<Customer> findByCustomerId(Long id);
 
-	Customer findByFirstName(String firstName);
+	List<Customer> findByFirstName(String firstName);
 	
-	Customer findByLastName(String lastName);
+	List<Customer> findByLastName(String lastName);
 	
-	Customer findByEmail(String email);
+	Optional<Customer> findByEmail(String email);
 	
-	Customer findByDni(Long dni);
+	Optional<Customer> findByDni(Long dni);
+	
+	Optional<Customer> findByPhoneNumber(Long phoneNumber);
 	
 	boolean existsByDni(Long dni);
 	

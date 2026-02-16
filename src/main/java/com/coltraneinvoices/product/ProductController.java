@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.coltraneinvoices.dto.ProductDTO;
 
@@ -39,6 +40,18 @@ public class ProductController {
 		})
     public Product getProductById(@PathVariable Long id) {
         return productService.getProductById(id);
+    }
+    
+    @GetMapping("/search")
+    @Operation(summary = "Buscar productos por su nombre")
+    @ApiResponses(value = {
+    	    @ApiResponse(responseCode = "200", description = "Producto(s) encontrado(s)"),
+    	    @ApiResponse(responseCode = "404", description = "No se encontró ningún producto"),
+    	    @ApiResponse(responseCode = "400", description = "Debe proporcionar al menos un parámetro")
+    	})
+    public ResponseEntity<List<ProductDTO>> searchByName(@RequestParam String name) {
+        List<ProductDTO> products = productService.searchByName(name);
+        return ResponseEntity.ok(products);
     }
     
     @GetMapping

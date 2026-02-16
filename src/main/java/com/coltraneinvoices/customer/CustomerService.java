@@ -1,5 +1,6 @@
 package com.coltraneinvoices.customer;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -47,6 +48,59 @@ public class CustomerService {
 		return customerRepository.findById(customerId)
 		        .orElseThrow(() -> new ResourceNotFoundException("Cliente", customerId));
 	}
+	
+	// Métodos de búsqueda por Params:
+	public List<CustomerDTO> searchByFirstName(String firstName) {
+		
+		List<Customer> customers = customerRepository.findByFirstName(firstName);
+	    if (customers.isEmpty()) {
+	        throw new ResourceNotFoundException("Clientes", firstName);
+	    }
+	    
+	    List<CustomerDTO> dtos = new ArrayList<>();
+	    for (Customer customer : customers) {
+	        dtos.add(convertToDTO(customer));
+	    }
+	    
+	    return dtos;
+	}
+	
+	public List<CustomerDTO> searchByLastName(String lastName) {
+		
+		List<Customer> customers = customerRepository.findByLastName(lastName);
+	    if (customers.isEmpty()) {
+	        throw new ResourceNotFoundException("Clientes", lastName);
+	    }
+	    
+	    List<CustomerDTO> dtos = new ArrayList<>();
+	    for (Customer customer : customers) {
+	        dtos.add(convertToDTO(customer));
+	    }
+	    
+	    return dtos;
+	}
+	
+	public CustomerDTO searchByDni(Long dni) {
+	    Customer customer = customerRepository.findByDni(dni)
+	        .orElseThrow(() -> new ResourceNotFoundException("Productos", dni));
+	    
+	    return convertToDTO(customer);
+	}
+	
+	public CustomerDTO searchByEmail(String email) {
+		Customer customer = customerRepository.findByEmail(email)
+				.orElseThrow(() -> new ResourceNotFoundException("Clientes", email));
+		
+		return convertToDTO(customer);
+	}
+	
+	public CustomerDTO searchByPhoneNumber(Long phoneNumber) {
+		Customer customer = customerRepository.findByPhoneNumber(phoneNumber)
+				.orElseThrow(() -> new ResourceNotFoundException("Clientes", phoneNumber));
+		
+		return convertToDTO(customer);
+	}
+	
 	
 	public List<CustomerDTO> getAllCustomers() {
 	    return customerRepository.findAll().stream()
