@@ -49,10 +49,10 @@ public class CustomerService {
 		        .orElseThrow(() -> new ResourceNotFoundException("Cliente", customerId));
 	}
 	
-	// Métodos de búsqueda por Params:
+	// Métodos de búsqueda por Params, permitiendo búsquedas parciales:
 	public List<CustomerDTO> searchByFirstName(String firstName) {
 		
-		List<Customer> customers = customerRepository.findByFirstName(firstName);
+		List<Customer> customers = customerRepository.findByFirstNameContainingIgnoreCase(firstName);
 	    if (customers.isEmpty()) {
 	        throw new ResourceNotFoundException("Clientes", firstName);
 	    }
@@ -67,11 +67,26 @@ public class CustomerService {
 	
 	public List<CustomerDTO> searchByLastName(String lastName) {
 		
-		List<Customer> customers = customerRepository.findByLastName(lastName);
+		List<Customer> customers = customerRepository.findByLastNameContainingIgnoreCase(lastName);
 	    if (customers.isEmpty()) {
 	        throw new ResourceNotFoundException("Clientes", lastName);
 	    }
 	    
+	    List<CustomerDTO> dtos = new ArrayList<>();
+	    for (Customer customer : customers) {
+	        dtos.add(convertToDTO(customer));
+	    }
+	    
+	    return dtos;
+	}
+	
+	public List<CustomerDTO> searchByEmail(String email) {
+		
+		List<Customer> customers = customerRepository.findByEmailContainingIgnoreCase(email);
+		    if (customers.isEmpty()) {
+		        throw new ResourceNotFoundException("Clientes", email);
+		    }
+		
 	    List<CustomerDTO> dtos = new ArrayList<>();
 	    for (Customer customer : customers) {
 	        dtos.add(convertToDTO(customer));
@@ -85,13 +100,6 @@ public class CustomerService {
 	        .orElseThrow(() -> new ResourceNotFoundException("Productos", dni));
 	    
 	    return convertToDTO(customer);
-	}
-	
-	public CustomerDTO searchByEmail(String email) {
-		Customer customer = customerRepository.findByEmail(email)
-				.orElseThrow(() -> new ResourceNotFoundException("Clientes", email));
-		
-		return convertToDTO(customer);
 	}
 	
 	public CustomerDTO searchByPhoneNumber(Long phoneNumber) {
