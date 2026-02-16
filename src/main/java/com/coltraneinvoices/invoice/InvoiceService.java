@@ -24,7 +24,6 @@ import com.coltraneinvoices.service.TimeProvider;
 public class InvoiceService {
 
 	private final InvoiceRepository invoiceRepository;
-	private final InvoiceDetailRepository invoiceDetailRepository;
 	private final CustomerRepository customerRepository;
 	private final ProductRepository productRepository;
 	private final TimeProvider timeProvider;
@@ -33,7 +32,6 @@ public class InvoiceService {
     		CustomerRepository customerRepository, ProductRepository productRepository, TimeProvider timeProvider) {
     	
     		this.invoiceRepository = invoiceRepository;
-    		this.invoiceDetailRepository = invoiceDetailRepository;
     		this.customerRepository = customerRepository;
     		this.productRepository = productRepository;
         this.timeProvider = timeProvider;
@@ -92,17 +90,17 @@ public class InvoiceService {
 	    		.invoiceDate(invoiceDate)
 	    		.productTotal(totalProductQuantity)
 	    		.totalAmount(totalAmount)
+	    		.details(details)
 	    		.build();
 
-	    	// Persistimos Invoice para generar su ID;
-	    Invoice savedInvoice = invoiceRepository.save(invoice);
 	    
 	    // Luego asignamos el invoice a invoiceDetails para persistirlos con su ID;
-	    details.forEach(detail -> detail.setInvoiceId(savedInvoice.getInvoiceId()));
-	    invoiceDetailRepository.saveAll(details);
+	    details.forEach(detail -> detail.setInvoice(invoice));
+	    Invoice savedInvoice = invoiceRepository.save(invoice);
+	    
 	    
 	    // Por último, retornamos un llamado a construcción del DTO con los parámetros necesarios:
-	    return buildResponseDTO(invoice, details, customer);
+	    return buildResponseDTO(savedInvoice, savedInvoice.getDetails(), customer);
 	}
 	
 	private InvoiceResponseDTO buildResponseDTO(Invoice invoice, 
@@ -124,7 +122,7 @@ public class InvoiceService {
 	    for (InvoiceDetail detail : details) {
 	        InvoiceResponseDTO.DetailResponseDTO detailDTO = InvoiceResponseDTO.DetailResponseDTO.builder()
 	        	    .detailId(detail.getDetailId())
-	        	    .invoiceId(detail.getInvoiceId())
+	        	    .invoiceId(detail.getInvoice().getInvoiceId())
 	            .productId(detail.getProduct().getProductId())
 	            .productName(detail.getProduct().getName())
 	            .productQuantity(detail.getProductQuantity())

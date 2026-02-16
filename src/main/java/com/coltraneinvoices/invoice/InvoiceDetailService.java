@@ -26,7 +26,7 @@ public class InvoiceDetailService {
 	    return InvoiceDetailDTO.builder()
 	            .invoiceDetailId(detail.getDetailId())
 	            .productId(detail.getProduct().getProductId())
-	            .invoiceId(detail.getInvoiceId())
+	            .invoiceId(detail.getInvoice().getInvoiceId())
 	            .quantity(detail.getProductQuantity())
 	            .unitPrice(detail.getUnitPrice())
 	            .subtotal(detail.getSubtotal())

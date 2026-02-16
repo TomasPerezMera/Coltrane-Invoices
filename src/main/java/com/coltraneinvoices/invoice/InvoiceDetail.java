@@ -3,6 +3,7 @@ package com.coltraneinvoices.invoice;
 import java.math.BigDecimal;
 
 import com.coltraneinvoices.product.Product;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.Entity;
@@ -41,8 +42,9 @@ public class InvoiceDetail {
 	
 	@ManyToOne
 	@JoinColumn(name = "invoice_id")
-	@Schema(name = "ID de la factura que se detalla", requiredMode = Schema.RequiredMode.REQUIRED)
-	private Long invoiceId;
+	@Schema(name = "ID de la factura que se detalla", hidden = true)
+	@JsonIgnore
+	private Invoice invoice;
 	
 	
 	@Schema(name = "Cantidad de productos")
