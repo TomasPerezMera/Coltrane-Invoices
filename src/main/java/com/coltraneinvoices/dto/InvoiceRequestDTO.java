@@ -35,8 +35,7 @@ public class InvoiceRequestDTO {
     @NoArgsConstructor
     @AllArgsConstructor
     @Schema(description = "Referencia al producto", example = "{\"productId\": 1}")
-    @NotNull(message = "Se requiere un ID de producto!")
-    @NotEmpty(message = "Debe incluir al menos un producto!")
+    @NotNull(message = "Se requiere un producto!")
     public static class ProductRefDTO {
         private Long productId;
     }

@@ -1,0 +1,1289 @@
+{
+  "info": {
+    "_postman_id": "b5aaaa1b-88c3-497e-afe1-839017c244ee",
+    "name": "ColtraneInvoices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "39315515",
+    "_collection_link": "https://go.postman.co/collection/39315515-b5aaaa1b-88c3-497e-afe1-839017c244ee?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Entrega",
+      "item": [
+        {
+          "name": "Crear Un Cliente",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"dni\": 38642534,\r\n  \"firstName\": \"Estefanía\",\r\n  \"lastName\": \"Andrómeda\",\r\n  \"email\": \"tefi.andromeda@yahoo.com\",\r\n  \"address\": \"Calle Vía Láctea, 328.474\",\r\n  \"phoneNumber\": 11545442480\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Crear Un Cliente",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"dni\": 38642534,\r\n  \"firstName\": \"Estefanía\",\r\n  \"lastName\": \"Andrómeda\",\r\n  \"email\": \"tefi.andromeda@yahoo.com\",\r\n  \"address\": \"Calle Vía Láctea, 328.474\",\r\n  \"phoneNumber\": 11545442480\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 13:29:09 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"customerId\": 5,\n    \"dni\": 38642534,\n    \"firstName\": \"Estefanía\",\n    \"lastName\": \"Andrómeda\",\n    \"email\": \"tefi.andromeda@yahoo.com\",\n    \"phoneNumber\": 11545442480,\n    \"address\": \"Calle Vía Láctea, 328.474\",\n    \"createdAt\": \"2026-02-16T13:29:09.25909Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Actualizar Cliente",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": 5,\r\n  \"email\": \"tefi.andromeda111@yahoo.com\"\r\n  }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers",
+                "5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Actualizar Cliente",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customerId\": 5,\r\n  \"email\": \"tefi.andromeda111@yahoo.com\"\r\n  }",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 14:39:25 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"customerId\": 5,\n    \"dni\": 38642534,\n    \"firstName\": \"Estefanía\",\n    \"lastName\": \"Andrómeda\",\n    \"email\": \"tefi.andromeda111@yahoo.com\",\n    \"phoneNumber\": 11545442480,\n    \"address\": \"Calle Vía Láctea, 328.474\",\n    \"createdAt\": \"2026-02-16T13:29:09.25909Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Obtener un Cliente",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/customers/5",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers",
+                "5"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Obtener un Cliente",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/5",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "5"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 14:37:35 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"customerId\": 5,\n    \"dni\": 38642534,\n    \"firstName\": \"Estefanía\",\n    \"lastName\": \"Andrómeda\",\n    \"email\": \"tefi.andromeda@yahoo.com\",\n    \"phoneNumber\": 11545442480,\n    \"address\": \"Calle Vía Láctea, 328.474\",\n    \"createdAt\": \"2026-02-16T13:29:09.25909Z\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Listado de Productos",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Obtener Listado de Productos",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/products",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "products"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 13:29:26 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"productId\": 1,\n        \"name\": \"Blue Train\",\n        \"description\": \"Blue Train es un álbum de John Coltrane publicado en 1957 por Blue Note Records, y grabado en Nueva Jersey. \\nEs la única grabación de Coltrane como director de sesión para Blue Note, y ha sido certificado Disco de Oro.<br><br>Se grabó durante su tiempo trabajando con Thelonious Monk, con la participación de Miles Davis, Paul Chambers y Philly Joe Jones, quienes tocaron junto con Coltrane en \\\"Milestones\\\" de Davis.\",\n        \"coverImageSource\": \"./images/covers/blueTrain.jpg\",\n        \"currentPrice\": 46400,\n        \"stock\": 74,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 2,\n        \"name\": \"Stardust\",\n        \"description\": \"Stardust es un álbum de Coltrane publicado en 1963 por Prestige Records, y compilado a partir de dos sesiones de 1958 en Nueva Jersey. <br><br>A medida que la fama de Coltrane crecía durante la década de 1960, mucho después de que hubiera dejado de grabar para la discográfica, Prestige utilizó grabaciones no editadas para crear nuevos álbumes comercializables sin el aporte ni la aprobación de Coltrane.\",\n        \"coverImageSource\": \"./images/covers/stardust.jpg\",\n        \"currentPrice\": 67200,\n        \"stock\": 52,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 3,\n        \"name\": \"Giant Steps\",\n        \"description\": \"Giant Steps es el quinto álbum de estudio de John Coltrane como líder, publicado en 1960 por Atlantic Records. Es el primer álbum de Coltrane como líder para Atlantic, y muchos de sus temas se han convertido en estándares para saxofonistas.<br><br>En 2004, fue uno de los cincuenta álbumes elegidos por la Biblioteca del Congreso de los EE. UU. para su inclusión en el Registro Nacional de Grabaciones.\",\n        \"coverImageSource\": \"./images/covers/giantSteps.jpg\",\n        \"currentPrice\": 86200,\n        \"stock\": 119,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 4,\n        \"name\": \"Ballads\",\n        \"description\": \"Ballads es un álbum de jazz de Coltrane, grabado entre diciembre de 1961 y 1962, y publicado por Impulse! en 1963.<br><br>El crítico Gene Lees declaró que el cuarteto nunca antes había tocado las canciones: “Llegaron con partituras de las canciones de una tienda de música, y justo antes de las grabaciones, discutían cada melodía, ensayaban a medias durante media hora y luego lo grababan”. Cada pieza se grabó en una sola toma, excepto “All or Nothing at All”.<br><br>En 2008, el álbum recibió el premio Grammy del Salón de la Fama.\",\n        \"coverImageSource\": \"./images/covers/ballads.jpg\",\n        \"currentPrice\": 64840,\n        \"stock\": 80,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 5,\n        \"name\": \"My Favorite Things\",\n        \"description\": \"My Favorite Things es el séptimo álbum de estudio de John Coltrane, publicado en 1961 por Atlantic Records. Fue el primer álbum en el que Coltrane tocó el saxofón soprano. Una versión editada de la canción que da título al álbum se convirtió en un sencillo de éxito en la radio en 1961.<br><br>El disco se convirtió en un gran éxito comercial, y en 1998, recibió el Grammy del Salón de la Fama.\",\n        \"coverImageSource\": \"./images/covers/myFavoriteThings.jpg\",\n        \"currentPrice\": 58570,\n        \"stock\": 0,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": false\n    },\n    {\n        \"productId\": 6,\n        \"name\": \"John Coltrane and Johnny Hartman\",\n        \"description\": \"John Coltrane and Johnny Hartman es un álbum de estudio de 1963, siendo Hartman el único vocalista con el que Coltrane grabaría como líder. Fue incluido en el Salón de la Fama de los Grammy en 2013.  El álbum se publicó en 1963, en un momento en el que Hartman estaba en la cresta de la ola por el éxito de su álbum \\\"I Just Dropped By to Say Hello\\\".<br><br>Hartman dijo más tarde que todas las canciones del álbum se grabaron en una sola toma, excepto por \\\"You Are Too Beautiful\\\", que requirió dos tomas porque a Elvin Jones se le cayó una de sus baquetas durante la primera toma.\",\n        \"coverImageSource\": \"./images/covers/johnnyHartman.jpg\",\n        \"currentPrice\": 68300,\n        \"stock\": 78,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 7,\n        \"name\": \"A Love Supreme\",\n        \"description\": \"A Love Supreme es un álbum de estudio de John Coltrane. Fue publicado en 1965 por Impulse! Records y se considera una de sus mejores obras. El álbum es una suite en cuatro partes, dividida entre las pistas: «Acknowledgement», «Resolution», «Pursuance» y «Psalm».<br><br>Es uno de los álbumes más vendidos de Coltrane y es ampliamente considerado como uno de los mejores álbumes de jazz de todos los tiempos, la obra maestra de Coltrane, y es “sin duda el álbum más querido de Coltrane”, según Robert Christgau, quien añade que “cimentó el estatus divino de Trane en Japón”.\",\n        \"coverImageSource\": \"./images/covers/aLoveSupreme.jpg\",\n        \"currentPrice\": 76100,\n        \"stock\": 156,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 8,\n        \"name\": \"Meditations\",\n        \"description\": \"Meditations es un álbum de 1966 de John Coltrane. En él aparecen Coltrane y el legendario Pharoah Sanders como solistas, ambos tocando el saxofón tenor.<br><br>El álbum fue considerado por muchos como una desviación de la obra anterior de Coltrane, ya que se alejaba del cuarteto estándar. Además de contar con el cuarteto clásico de Coltrane, también incorpora a un segundo baterista, Rashied Ali. El álbum fue considerado la “continuación espiritual” de “A Love Supreme”.\",\n        \"coverImageSource\": \"./images/covers/meditations.jpg\",\n        \"currentPrice\": 63880,\n        \"stock\": 39,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 9,\n        \"name\": \"Ascension\",\n        \"description\": \"Ascension es un álbum de jazz de John Coltrane publicado en 1966. A menudo se considera la piedra angular de su obra, ya que los álbumes anteriores tenían una estructura más convencional, y los posteriores fueron más sueltos y se inspiraban en el “free jazz”.<br><br>Además de Coltrane, el álbum incluye actuaciones del quinteto de trabajo de Coltrane de la época, formado por McCoy Tyner, Jimmy Garrison y Elvin Jones, además de contribuciones de Art Davis, Freddie Hubbard, Dewey Johnson, Marion Brown, John Tchicai y Pharoah Sanders.\",\n        \"coverImageSource\": \"./images/covers/ascension.jpg\",\n        \"currentPrice\": 57180,\n        \"stock\": 66,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": true\n    },\n    {\n        \"productId\": 10,\n        \"name\": \"The First Trane!\",\n        \"description\": \"John Coltrane with the Red Garland Trio is the third studio album by the jazz musician John Coltrane. It was released in early 1958 through Prestige Records. The recording took place at Rudy Van Gelder's studio on August 23, 1957.\",\n        \"coverImageSource\": \"./images/theFirstTrane.jpg\",\n        \"currentPrice\": 140500,\n        \"stock\": 30,\n        \"category\": \"Coltrane Albums\",\n        \"isAvailable\": false\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Realizar Una Venta",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customer\": {\r\n    \"customerId\": 4\r\n  },\r\n  \"lines\": [\r\n    {\r\n      \"productQuantity\": 1,\r\n      \"product\": {\r\n        \"productId\": 9\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 3,\r\n      \"product\": {\r\n        \"productId\": 7\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 8,\r\n      \"product\": {\r\n        \"productId\": 2\r\n      }\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/invoices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "invoices"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Realizar Una Venta",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customer\": {\r\n    \"customerId\": 4\r\n  },\r\n  \"lines\": [\r\n    {\r\n      \"productQuantity\": 3,\r\n      \"product\": {\r\n        \"productId\": 9\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 1,\r\n      \"product\": {\r\n        \"productId\": 7\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 5,\r\n      \"product\": {\r\n        \"productId\": 2\r\n      }\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 12:19:30 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"invoiceId\": 5,\n    \"invoiceDate\": \"2026-02-16T12:19:30.354387Z\",\n    \"customer\": {\n        \"customerId\": 4,\n        \"dni\": 45678912,\n        \"firstName\": \"Tomás\",\n        \"lastName\": \"Pérez\",\n        \"email\": \"tperez321@gmail.com\",\n        \"address\": \"Calle Moldes, 321, CABA\",\n        \"phoneNumber\": 1145242132\n    },\n    \"details\": [\n        {\n            \"productId\": 9,\n            \"productName\": \"Ascension\",\n            \"invoiceId\": 5,\n            \"detailId\": 10,\n            \"subtotal\": 171540,\n            \"productQuantity\": 3,\n            \"unitPrice\": 57180\n        },\n        {\n            \"productId\": 7,\n            \"productName\": \"A Love Supreme\",\n            \"invoiceId\": 5,\n            \"detailId\": 11,\n            \"subtotal\": 76100,\n            \"productQuantity\": 1,\n            \"unitPrice\": 76100\n        },\n        {\n            \"productId\": 2,\n            \"productName\": \"Stardust\",\n            \"invoiceId\": 5,\n            \"detailId\": 12,\n            \"subtotal\": 336000,\n            \"productQuantity\": 5,\n            \"unitPrice\": 67200\n        }\n    ],\n    \"productTotal\": 9,\n    \"totalAmount\": 583640,\n    \"errors\": null\n}"
+            },
+            {
+              "name": "Realizar Una Venta",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customer\": {\r\n    \"customerId\": 4\r\n  },\r\n  \"lines\": [\r\n    {\r\n      \"productQuantity\": 1,\r\n      \"product\": {\r\n        \"productId\": 9\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 3,\r\n      \"product\": {\r\n        \"productId\": 7\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 8,\r\n      \"product\": {\r\n        \"productId\": 2\r\n      }\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 14:35:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"invoiceId\": 7,\n    \"invoiceDate\": \"2026-02-16T14:35:51.4192649Z\",\n    \"customer\": {\n        \"customerId\": 4,\n        \"dni\": 45678912,\n        \"firstName\": \"Tomás\",\n        \"lastName\": \"Pérez\",\n        \"email\": \"tperez321@gmail.com\",\n        \"address\": \"Calle Moldes, 321, CABA\",\n        \"phoneNumber\": 1145242132\n    },\n    \"details\": [\n        {\n            \"productId\": 9,\n            \"productName\": \"Ascension\",\n            \"invoiceId\": 7,\n            \"detailId\": 14,\n            \"subtotal\": 57180,\n            \"productQuantity\": 1,\n            \"unitPrice\": 57180\n        },\n        {\n            \"productId\": 7,\n            \"productName\": \"A Love Supreme\",\n            \"invoiceId\": 7,\n            \"detailId\": 15,\n            \"subtotal\": 228300,\n            \"productQuantity\": 3,\n            \"unitPrice\": 76100\n        },\n        {\n            \"productId\": 2,\n            \"productName\": \"Stardust\",\n            \"invoiceId\": 7,\n            \"detailId\": 16,\n            \"subtotal\": 537600,\n            \"productQuantity\": 8,\n            \"unitPrice\": 67200\n        }\n    ],\n    \"productTotal\": 12,\n    \"totalAmount\": 823080,\n    \"errors\": null\n}"
+            },
+            {
+              "name": "Realizar Una Venta",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customer\": {\r\n    \"customerId\": 4\r\n  },\r\n  \"lines\": [\r\n    {\r\n      \"productQuantity\": 1,\r\n      \"product\": {\r\n        \"productId\": 9\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 3,\r\n      \"product\": {\r\n        \"productId\": 7\r\n      }\r\n    },\r\n    {\r\n      \"productQuantity\": 8,\r\n      \"product\": {\r\n        \"productId\": 2\r\n      }\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 14:35:51 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"invoiceId\": 7,\n    \"invoiceDate\": \"2026-02-16T14:35:51.4192649Z\",\n    \"customer\": {\n        \"customerId\": 4,\n        \"dni\": 45678912,\n        \"firstName\": \"Tomás\",\n        \"lastName\": \"Pérez\",\n        \"email\": \"tperez321@gmail.com\",\n        \"address\": \"Calle Moldes, 321, CABA\",\n        \"phoneNumber\": 1145242132\n    },\n    \"details\": [\n        {\n            \"productId\": 9,\n            \"productName\": \"Ascension\",\n            \"invoiceId\": 7,\n            \"detailId\": 14,\n            \"subtotal\": 57180,\n            \"productQuantity\": 1,\n            \"unitPrice\": 57180\n        },\n        {\n            \"productId\": 7,\n            \"productName\": \"A Love Supreme\",\n            \"invoiceId\": 7,\n            \"detailId\": 15,\n            \"subtotal\": 228300,\n            \"productQuantity\": 3,\n            \"unitPrice\": 76100\n        },\n        {\n            \"productId\": 2,\n            \"productName\": \"Stardust\",\n            \"invoiceId\": 7,\n            \"detailId\": 16,\n            \"subtotal\": 537600,\n            \"productQuantity\": 8,\n            \"unitPrice\": 67200\n        }\n    ],\n    \"productTotal\": 12,\n    \"totalAmount\": 823080,\n    \"errors\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Eliminar Un Cliente",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Crear Un Producto",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Standard Coltrane\",\r\n  \"description\": \"Standard Coltrane is an album by the jazz musician and composer John Coltrane. It was released in October 1962 by Prestige Records. It was recorded at a single recording session at the studio of Rudy Van Gelder in Hackensack, New Jersey, in 1958.\",\r\n  \"coverImageSource\": \"./images/standardColtrane.jpg\",\r\n  \"currentPrice\": 82700.00,\r\n  \"stock\": 100,\r\n  \"category\": \"Coltrane Albums\",\r\n  \"isAvailable\": true\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Eliminar Un Producto",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "DELETE",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/11",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "11"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Obtener Listado de Facturas",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": 2,\r\n  \"phoneNumber\": 1145438779\r\n  }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/invoices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "invoices"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Obtener Listado de Facturas",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customerId\": 2,\r\n  \"phoneNumber\": 1145438779\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 13:51:29 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"invoiceId\": 1,\n        \"invoiceDate\": \"2026-02-15T21:22:19.666598Z\",\n        \"customer\": {\n            \"customerId\": 1,\n            \"dni\": 12345678,\n            \"firstName\": \"Juan Carlos\",\n            \"lastName\": \"Gomez\",\n            \"email\": \"jcgomez123@gmail.com\",\n            \"address\": \"Calle Ficticia 123\",\n            \"phoneNumber\": 1145453214\n        },\n        \"details\": [\n            {\n                \"productId\": 1,\n                \"productName\": \"Blue Train\",\n                \"invoiceId\": 1,\n                \"detailId\": 1,\n                \"subtotal\": 92800,\n                \"productQuantity\": 2,\n                \"unitPrice\": 46400\n            },\n            {\n                \"productId\": 3,\n                \"productName\": \"Giant Steps\",\n                \"invoiceId\": 1,\n                \"detailId\": 2,\n                \"subtotal\": 86200,\n                \"productQuantity\": 1,\n                \"unitPrice\": 86200\n            }\n        ],\n        \"productTotal\": 1,\n        \"totalAmount\": 0,\n        \"errors\": null\n    },\n    {\n        \"invoiceId\": 2,\n        \"invoiceDate\": \"2026-02-15T21:30:05.148818Z\",\n        \"customer\": {\n            \"customerId\": 2,\n            \"dni\": 87654321,\n            \"firstName\": \"María Juana\",\n            \"lastName\": \"Benitez\",\n            \"email\": \"mjbenitezzz@gmail.com\",\n            \"address\": \"Av. Olazábal, 4321, CABA\",\n            \"phoneNumber\": 1145438779\n        },\n        \"details\": [\n            {\n                \"productId\": 7,\n                \"productName\": \"A Love Supreme\",\n                \"invoiceId\": 2,\n                \"detailId\": 3,\n                \"subtotal\": 228300,\n                \"productQuantity\": 3,\n                \"unitPrice\": 76100\n            },\n            {\n                \"productId\": 2,\n                \"productName\": \"Stardust\",\n                \"invoiceId\": 2,\n                \"detailId\": 4,\n                \"subtotal\": 67200,\n                \"productQuantity\": 1,\n                \"unitPrice\": 67200\n            }\n        ],\n        \"productTotal\": 4,\n        \"totalAmount\": 295500,\n        \"errors\": null\n    },\n    {\n        \"invoiceId\": 3,\n        \"invoiceDate\": \"2026-02-15T21:32:45.463775Z\",\n        \"customer\": {\n            \"customerId\": 1,\n            \"dni\": 12345678,\n            \"firstName\": \"Juan Carlos\",\n            \"lastName\": \"Gomez\",\n            \"email\": \"jcgomez123@gmail.com\",\n            \"address\": \"Calle Ficticia 123\",\n            \"phoneNumber\": 1145453214\n        },\n        \"details\": [\n            {\n                \"productId\": 6,\n                \"productName\": \"John Coltrane and Johnny Hartman\",\n                \"invoiceId\": 3,\n                \"detailId\": 5,\n                \"subtotal\": 136600,\n                \"productQuantity\": 2,\n                \"unitPrice\": 68300\n            },\n            {\n                \"productId\": 1,\n                \"productName\": \"Blue Train\",\n                \"invoiceId\": 3,\n                \"detailId\": 6,\n                \"subtotal\": 185600,\n                \"productQuantity\": 4,\n                \"unitPrice\": 46400\n            }\n        ],\n        \"productTotal\": 6,\n        \"totalAmount\": 322200,\n        \"errors\": null\n    },\n    {\n        \"invoiceId\": 4,\n        \"invoiceDate\": \"2026-02-15T21:35:49.937498Z\",\n        \"customer\": {\n            \"customerId\": 2,\n            \"dni\": 87654321,\n            \"firstName\": \"María Juana\",\n            \"lastName\": \"Benitez\",\n            \"email\": \"mjbenitezzz@gmail.com\",\n            \"address\": \"Av. Olazábal, 4321, CABA\",\n            \"phoneNumber\": 1145438779\n        },\n        \"details\": [\n            {\n                \"productId\": 9,\n                \"productName\": \"Ascension\",\n                \"invoiceId\": 4,\n                \"detailId\": 7,\n                \"subtotal\": 57180,\n                \"productQuantity\": 1,\n                \"unitPrice\": 57180\n            },\n            {\n                \"productId\": 2,\n                \"productName\": \"Stardust\",\n                \"invoiceId\": 4,\n                \"detailId\": 8,\n                \"subtotal\": 134400,\n                \"productQuantity\": 2,\n                \"unitPrice\": 67200\n            },\n            {\n                \"productId\": 8,\n                \"productName\": \"Meditations\",\n                \"invoiceId\": 4,\n                \"detailId\": 9,\n                \"subtotal\": 63880,\n                \"productQuantity\": 1,\n                \"unitPrice\": 63880\n            }\n        ],\n        \"productTotal\": 4,\n        \"totalAmount\": 255460,\n        \"errors\": null\n    },\n    {\n        \"invoiceId\": 5,\n        \"invoiceDate\": \"2026-02-16T12:19:30.354387Z\",\n        \"customer\": {\n            \"customerId\": 4,\n            \"dni\": 45678912,\n            \"firstName\": \"Tomás\",\n            \"lastName\": \"Pérez\",\n            \"email\": \"tperez321@gmail.com\",\n            \"address\": \"Calle Moldes, 321, CABA\",\n            \"phoneNumber\": 1145242132\n        },\n        \"details\": [\n            {\n                \"productId\": 9,\n                \"productName\": \"Ascension\",\n                \"invoiceId\": 5,\n                \"detailId\": 10,\n                \"subtotal\": 171540,\n                \"productQuantity\": 3,\n                \"unitPrice\": 57180\n            },\n            {\n                \"productId\": 7,\n                \"productName\": \"A Love Supreme\",\n                \"invoiceId\": 5,\n                \"detailId\": 11,\n                \"subtotal\": 76100,\n                \"productQuantity\": 1,\n                \"unitPrice\": 76100\n            },\n            {\n                \"productId\": 2,\n                \"productName\": \"Stardust\",\n                \"invoiceId\": 5,\n                \"detailId\": 12,\n                \"subtotal\": 336000,\n                \"productQuantity\": 5,\n                \"unitPrice\": 67200\n            }\n        ],\n        \"productTotal\": 9,\n        \"totalAmount\": 583640,\n        \"errors\": null\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "HTTP 409 Conflict al Duplicar Clientes",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"dni\": 45678912,\r\n  \"firstName\": \"Tomás\",\r\n  \"lastName\": \"Pérez\",\r\n  \"email\": \"tperez321@gmail.com\",\r\n  \"address\": \"Calle Moldes, 321, CABA\",\r\n  \"phoneNumber\": 1145242132\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "HTTP 409 Conflict",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"dni\": 45678912,\r\n  \"firstName\": \"Tomás\",\r\n  \"lastName\": \"Pérez\",\r\n  \"email\": \"tperez321@gmail.com\",\r\n  \"address\": \"Calle Moldes, 321, CABA\",\r\n  \"phoneNumber\": 1145242132\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 12:18:01 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"code\": \"DUPLICATE_RESOURCE\",\n    \"message\": \"Ya existe un cliente con este DNI!\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Actualizar Un Producto",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"isAvailable\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/10",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "10"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Actualizar Un Producto",
+              "originalRequest": {
+                "method": "PUT",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"isAvailable\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/products/10",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "products",
+                    "10"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 12:32:00 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"productId\": 10,\n    \"name\": \"The First Trane!\",\n    \"description\": \"John Coltrane with the Red Garland Trio is the third studio album by the jazz musician John Coltrane. It was released in early 1958 through Prestige Records. The recording took place at Rudy Van Gelder's studio on August 23, 1957.\",\n    \"coverImageSource\": \"./images/theFirstTrane.jpg\",\n    \"currentPrice\": 140500,\n    \"stock\": 30,\n    \"category\": \"Coltrane Albums\",\n    \"isAvailable\": false\n}"
+            }
+          ]
+        },
+        {
+          "name": "Buscar Cliente Con Filtros",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers/search?dni=87654321",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "dni",
+                  "value": "87654321"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Buscar Cliente Con Filtros",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/search?dni=87654321",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "dni",
+                      "value": "87654321"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 13:27:01 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"customerId\": null,\n    \"dni\": 87654321,\n    \"firstName\": \"María Juana\",\n    \"lastName\": \"Benitez\",\n    \"email\": \"mjbenitezzz@gmail.com\",\n    \"address\": \"Av. Olazábal, 4321, CABA\",\n    \"phoneNumber\": null\n}"
+            }
+          ]
+        },
+        {
+          "name": "Filtrar Clientes por Params Parciales",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": ""
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customers/search?email=te",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customers",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "email",
+                  "value": "te"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Filtrar Clientes por Params Parciales",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": ""
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/customers/search?email=te",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "customers",
+                    "search"
+                  ],
+                  "query": [
+                    {
+                      "key": "email",
+                      "value": "te"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 13:50:29 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n    {\n        \"customerId\": 2,\n        \"dni\": 87654321,\n        \"firstName\": \"María Juana\",\n        \"lastName\": \"Benitez\",\n        \"email\": \"mjbenitezzz@gmail.com\",\n        \"address\": \"Av. Olazábal, 4321, CABA\",\n        \"phoneNumber\": 1145438779\n    },\n    {\n        \"customerId\": 5,\n        \"dni\": 38642534,\n        \"firstName\": \"Estefanía\",\n        \"lastName\": \"Andrómeda\",\n        \"email\": \"tefi.andromeda@yahoo.com\",\n        \"address\": \"Calle Vía Láctea, 328.474\",\n        \"phoneNumber\": 11545442480\n    }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Producto Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": 2,\r\n  \"phoneNumber\": 1145438779\r\n  }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/products/2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "products",
+                "2"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Obtener Producto Por ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customerId\": 2,\r\n  \"phoneNumber\": 1145438779\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/products/2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "products",
+                    "2"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 13:56:03 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"productId\": 2,\n    \"name\": \"Stardust\",\n    \"description\": \"Stardust es un álbum de Coltrane publicado en 1963 por Prestige Records, y compilado a partir de dos sesiones de 1958 en Nueva Jersey. <br><br>A medida que la fama de Coltrane crecía durante la década de 1960, mucho después de que hubiera dejado de grabar para la discográfica, Prestige utilizó grabaciones no editadas para crear nuevos álbumes comercializables sin el aporte ni la aprobación de Coltrane.\",\n    \"coverImageSource\": \"./images/covers/stardust.jpg\",\n    \"currentPrice\": 67200,\n    \"stock\": 52,\n    \"category\": \"Coltrane Albums\",\n    \"isAvailable\": true\n}"
+            }
+          ]
+        },
+        {
+          "name": "Obtener Invoice Por ID",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customerId\": 2,\r\n  \"phoneNumber\": 1145438779\r\n  }"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/invoices/4",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "invoices",
+                "4"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Obtener Invoice Por ID",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customerId\": 2,\r\n  \"phoneNumber\": 1145438779\r\n  }"
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/invoices/4",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "invoices",
+                    "4"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 14:23:18 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"invoiceId\": 4,\n    \"invoiceDate\": \"2026-02-15T21:35:49.937498Z\",\n    \"customer\": {\n        \"customerId\": 2,\n        \"dni\": 87654321,\n        \"firstName\": \"María Juana\",\n        \"lastName\": \"Benitez\",\n        \"email\": \"mjbenitezzz@gmail.com\",\n        \"phoneNumber\": 1145438779,\n        \"address\": \"Av. Olazábal, 4321, CABA\",\n        \"createdAt\": \"2026-02-15T20:53:28.541839Z\"\n    },\n    \"productTotal\": 4,\n    \"totalAmount\": 255460,\n    \"details\": [\n        {\n            \"detailId\": 7,\n            \"product\": {\n                \"productId\": 9,\n                \"name\": \"Ascension\",\n                \"description\": \"Ascension es un álbum de jazz de John Coltrane publicado en 1966. A menudo se considera la piedra angular de su obra, ya que los álbumes anteriores tenían una estructura más convencional, y los posteriores fueron más sueltos y se inspiraban en el “free jazz”.<br><br>Además de Coltrane, el álbum incluye actuaciones del quinteto de trabajo de Coltrane de la época, formado por McCoy Tyner, Jimmy Garrison y Elvin Jones, además de contribuciones de Art Davis, Freddie Hubbard, Dewey Johnson, Marion Brown, John Tchicai y Pharoah Sanders.\",\n                \"coverImageSource\": \"./images/covers/ascension.jpg\",\n                \"currentPrice\": 57180,\n                \"stock\": 66,\n                \"category\": \"Coltrane Albums\",\n                \"isAvailable\": true\n            },\n            \"productQuantity\": 1,\n            \"unitPrice\": 57180,\n            \"subtotal\": 57180\n        },\n        {\n            \"detailId\": 8,\n            \"product\": {\n                \"productId\": 2,\n                \"name\": \"Stardust\",\n                \"description\": \"Stardust es un álbum de Coltrane publicado en 1963 por Prestige Records, y compilado a partir de dos sesiones de 1958 en Nueva Jersey. <br><br>A medida que la fama de Coltrane crecía durante la década de 1960, mucho después de que hubiera dejado de grabar para la discográfica, Prestige utilizó grabaciones no editadas para crear nuevos álbumes comercializables sin el aporte ni la aprobación de Coltrane.\",\n                \"coverImageSource\": \"./images/covers/stardust.jpg\",\n                \"currentPrice\": 67200,\n                \"stock\": 52,\n                \"category\": \"Coltrane Albums\",\n                \"isAvailable\": true\n            },\n            \"productQuantity\": 2,\n            \"unitPrice\": 67200,\n            \"subtotal\": 134400\n        },\n        {\n            \"detailId\": 9,\n            \"product\": {\n                \"productId\": 8,\n                \"name\": \"Meditations\",\n                \"description\": \"Meditations es un álbum de 1966 de John Coltrane. En él aparecen Coltrane y el legendario Pharoah Sanders como solistas, ambos tocando el saxofón tenor.<br><br>El álbum fue considerado por muchos como una desviación de la obra anterior de Coltrane, ya que se alejaba del cuarteto estándar. Además de contar con el cuarteto clásico de Coltrane, también incorpora a un segundo baterista, Rashied Ali. El álbum fue considerado la “continuación espiritual” de “A Love Supreme”.\",\n                \"coverImageSource\": \"./images/covers/meditations.jpg\",\n                \"currentPrice\": 63880,\n                \"stock\": 39,\n                \"category\": \"Coltrane Albums\",\n                \"isAvailable\": true\n            },\n            \"productQuantity\": 1,\n            \"unitPrice\": 63880,\n            \"subtotal\": 63880\n        }\n    ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Venta de Artículo Sin Stock",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"customer\": {\r\n    \"customerId\": 1\r\n  },\r\n  \"lines\": [\r\n    {\r\n      \"productQuantity\": 3,\r\n      \"product\": {\r\n        \"productId\": 5\r\n      }\r\n    }\r\n  ]\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/invoices",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "invoices"
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "Venta de Artículo Sin Stock",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"customer\": {\r\n    \"customerId\": 1\r\n  },\r\n  \"lines\": [\r\n    {\r\n      \"productQuantity\": 3,\r\n      \"product\": {\r\n        \"productId\": 5\r\n      }\r\n    }\r\n  ]\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/api/invoices",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "invoices"
+                  ]
+                }
+              },
+              "status": "Conflict",
+              "code": 409,
+              "_postman_previewlanguage": null,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                },
+                {
+                  "key": "Transfer-Encoding",
+                  "value": "chunked"
+                },
+                {
+                  "key": "Date",
+                  "value": "Mon, 16 Feb 2026 14:34:50 GMT"
+                },
+                {
+                  "key": "Keep-Alive",
+                  "value": "timeout=60"
+                },
+                {
+                  "key": "Connection",
+                  "value": "keep-alive"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n    \"code\": \"INSUFFICIENT_STOCK\",\n    \"message\": \"Lo sentimos! No hay stock disponible para el ítem My Favorite Things. Elegí otro ítem!\"\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
