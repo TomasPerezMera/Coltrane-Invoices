@@ -38,6 +38,7 @@ public class Invoice {
     @Column(name = "invoice_id")
     private Long invoiceId;
 	
+    
     @Schema(name = "Fecha de la factura", requiredMode = Schema.RequiredMode.REQUIRED)
     @Column(name = "invoice_date", nullable = false, updatable = false)
     private OffsetDateTime invoiceDate;
@@ -58,6 +59,7 @@ public class Invoice {
     @Column(name = "total_amount", nullable = false)
     private BigDecimal totalAmount;
 
+    
     @Schema(name = "Detalle de la factura")
     @OneToMany(mappedBy = "invoice", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<InvoiceDetail> details;

@@ -153,11 +153,13 @@ public class CustomerService {
 	// Método para conversión Entidad -> DTO
     private CustomerDTO convertToDTO(Customer customer) {
     		return CustomerDTO.builder()
+    				.customerId(customer.getCustomerId())
     				.firstName(customer.getFirstName())
     				.lastName(customer.getLastName())
     				.dni(customer.getDni())
     				.email(customer.getEmail())
     				.address(customer.getAddress())
+    				.phoneNumber(customer.getPhoneNumber())
     				.build();
-    }	
+    }
 }

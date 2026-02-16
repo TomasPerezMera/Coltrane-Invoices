@@ -42,7 +42,8 @@ public class InvoiceDetail {
 	@ManyToOne
 	@JoinColumn(name = "invoice_id")
 	@Schema(name = "ID de la factura que se detalla", requiredMode = Schema.RequiredMode.REQUIRED)
-	private Invoice invoice;
+	private Long invoiceId;
+	
 	
 	@Schema(name = "Cantidad de productos")
     private Long productQuantity;
@@ -51,6 +52,7 @@ public class InvoiceDetail {
 	@Schema(name = "Precio por unidad")
     private BigDecimal unitPrice;
     
+	
 	@Schema(name = "Subtotal")
     private BigDecimal subtotal;
 	

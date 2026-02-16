@@ -98,7 +98,7 @@ public class InvoiceService {
 	    Invoice savedInvoice = invoiceRepository.save(invoice);
 	    
 	    // Luego asignamos el invoice a invoiceDetails para persistirlos con su ID;
-	    details.forEach(detail -> detail.setInvoice(savedInvoice));
+	    details.forEach(detail -> detail.setInvoiceId(savedInvoice.getInvoiceId()));
 	    invoiceDetailRepository.saveAll(details);
 	    
 	    // Por último, retornamos un llamado a construcción del DTO con los parámetros necesarios:
@@ -124,7 +124,7 @@ public class InvoiceService {
 	    for (InvoiceDetail detail : details) {
 	        InvoiceResponseDTO.DetailResponseDTO detailDTO = InvoiceResponseDTO.DetailResponseDTO.builder()
 	        	    .detailId(detail.getDetailId())
-	        	    .invoiceId(detail.getInvoice().getInvoiceId())
+	        	    .invoiceId(detail.getInvoiceId())
 	            .productId(detail.getProduct().getProductId())
 	            .productName(detail.getProduct().getName())
 	            .productQuantity(detail.getProductQuantity())
