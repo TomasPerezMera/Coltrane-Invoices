@@ -1,6 +1,6 @@
 # Coltrane-Invoices - Sistema de Facturación Para *El Rincón de Coltrane*
 
-API REST para la gestión de ventas de un E-Commerce de vinilos de jazz, "El Rincon De Coltrane" [ https://tomasperezmera.github.io/rinconDeColtrane/ ].
+API REST para la gestión de ventas de un E-Commerce de vinilos de jazz, "El Rincon De Coltrane" [ https://tomasperezlosada.github.io/rinconDeColtrane/ ].
 
 
 <a href="https://time.now">World Time API by Time.Now</a>
